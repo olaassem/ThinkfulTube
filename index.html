@@ -16,21 +16,16 @@
 			<h1>Search Youtube Videos</h1>
 		</header>
 
-		<main role="main">
-			<form role="form" class="js-search-form" action="#" method="#">
-				<label for="query"></label>
-				<input type="text" class="js-query" id="query" placeholder="I wanna watch..." />
-				<button type="submit" class="js-submit">Find It!</button>
-			</form>
+		<form role="form" class="js-search-form" name="search" action="#" method="#">
+			<label for="query"></label>
+			<input type="text" class="js-query" id="query" placeholder="I wanna watch..." />
+			<button type="submit" class="js-submit">Find It!</button>
+		</form>
 
+		<main role="main" aria-live="assertive" hidden>
+				<h2>VIDEO SEARCH RESULTS</h2>
 
-			<section role="region">
-				<h2>Here Are Your Videos:</h2>
-
-				<div class="js-search-results">
-
-				</div>	
-			</section> 	
+				<div class="js-search-results"></div>		
 		</main>
 
 

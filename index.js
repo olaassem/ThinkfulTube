@@ -37,19 +37,18 @@ function getDataFromAPI( searchInput, callback ) {
 //Function to display the thumbnail image of the returned videos in '.js-results-search-results'.
 function renderResults(result) {
   return `
-    <ul>
-      <li>    
+    <div class="js-video-container">    
         <h3 class="js-video-title">${result.snippet.title}</h3>
         <a href="https://www.youtube.com/watch?v=${result.id.videoId}" target="_blank"><img class="js-result-img" src="${result.snippet.thumbnails.medium.url}" alt="${result.snippet.title}"></a>
-        <a href="https://www.youtube.com/channel/${result.snippet.channelId}" target="_blank">More from this channel: ${result.snippet.channelTitle}</a>
-      </li>
-    </ul>  
+        <p class="js-video-description">${result.snippet.description}"</p>
+    </div>  
   `;
   console.log('renderResults ran');
 }
 
 
 function displayYTData(data) {
+  $('main').prop('hidden',false);
   const results = data.items.map((item, index) => renderResults(item));
   $('.js-search-results').html(results);
 }
